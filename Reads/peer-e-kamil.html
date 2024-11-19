@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOK HUB CLUB</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* Sidebar Container */
+.sidebar {
+    width: 250px; /* Sidebar width */
+    height: 100vh; /* Full viewport height */
+    background-color: #6c541e; /* Background color */
+    color: white; /* Text color */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Scrollable for overflowing content */
+    padding: 10px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 10px; /* Space between images */
+}
+
+/* Images */
+.image-container img {
+    width: 100%; /* Make images responsive to sidebar width */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add depth to images */
+    cursor: pointer; /* Pointer cursor for interactive effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Main Display Styling */
+.main-display {
+    margin-left: 270px; /* Adjust margin to fit the sidebar */
+    padding: 20px;
+    text-align: center;
+}
+
+.main-display img {
+    max-width: 80%; /* Responsive size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.main-display img:hover {
+    transform: scale(1.02);
+}
+
+/* Back to Home Button Styling */
+.back-to-home {
+    position: fixed; /* Fixed position on the screen */
+    top: 20px; /* Adjust top position */
+    right: 20px; /* Adjust right position */
+    background-color: #6c541e; /* Button background */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.back-to-home a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    font-size: 1em; /* Font size */
+}
+
+.back-to-home:hover {
+    background-color: #8a6d2f; /* Button hover color */
+}
+
+.back-to-home:active {
+    background-color: #5a4114; /* Button active color */
+}
+
+
+
+
+
+
+</style>
+<body>
+
+    <!-- SIDEBAR  -->
+
+    <div class="sidebar">
+        <div class="sidebar-header">PEER-E-KAMIL</div>
+        <div class="image-container">
+            <img src="../images/Kamil.jfif" alt="Image Description"  onclick="displayImage(this)">
+            <img src="image2.jpg" alt="Image 2" onclick="displayImage(this)">
+            <img src="image3.jpg" alt="Image 3" onclick="displayImage(this)">
+            <img src="image4.jpg" alt="Image 4" onclick="displayImage(this)">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+<!-- SIDEBAR END -->
+      
+    <!-- MAIN DISPLAY -->
+    <div class="main-display">
+        <img id="main-image" src="../images/kamil.jfif" alt="Main Image"> <!-- Set initial image -->
+    </div>
+    <div class="back-to-home">
+        <a href="../index.html">Back to Home</a>
+    </div>
+
+
+
+</body>
+<script>
+    function displayImage(imageElement) {
+    // Get the main image element
+    const mainImage = document.getElementById('main-image');
+
+    // Set the source of the main image to the clicked image's source
+    mainImage.src = imageElement.src;
+    mainImage.alt = imageElement.alt;
+}
+</script>
+</html>
